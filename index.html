@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Made + Remade | Furniture and Upcycled Vintage</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2d2d2d;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f5f0e8 0%, #faf7f2 100%);
+            text-align: center;
+            padding: 100px 20px 80px;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            font-weight: 300;
+            letter-spacing: 12px;
+            margin-bottom: 10px;
+            color: #3d3d3d;
+            text-transform: uppercase;
+        }
+
+        .hero .subtitle {
+            font-size: 1em;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #6b6b6b;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .hero .tagline {
+            font-size: 1.2em;
+            font-style: italic;
+            color: #5a5a5a;
+            margin-top: 30px;
+            font-weight: 300;
+        }
+
+        /* Navigation Buttons */
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 40px 20px;
+            background: #fff;
+        }
+
+        .nav-btn {
+            padding: 15px 35px;
+            background: #d4c4b0;
+            border: none;
+            border-radius: 5px;
+            font-size: 0.95em;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            color: #3d3d3d;
+            font-weight: 500;
+        }
+
+        .nav-btn:hover {
+            background: #8b7355;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(139, 115, 85, 0.3);
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: #3d3d3d;
+            letter-spacing: 6px;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+
+        /* Animals Section */
+        .animals-section {
+            background: #fafaf8;
+        }
+
+        .animals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .animal-card {
+            background: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .animal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .animal-card img {
+            width: 100%;
+            max-width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .animal-card h3 {
+            font-size: 1.8em;
+            color: #5a5a5a;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        /* Furniture Types Section */
+        .furniture-section {
+            background: #fff;
+        }
+
+        .furniture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .furniture-card {
+            background: #f5f0e8;
+            padding: 50px 30px;
+            text-align: center;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .furniture-card:hover {
+            background: #e8dcc8;
+            transform: scale(1.03);
+        }
+
+        .furniture-card h3 {
+            font-size: 1.6em;
+            color: #5a5a5a;
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+
+        /* Custom Furniture Section */
+        .custom-section {
+            background: linear-gradient(135deg, #8b7355 0%, #6b5a47 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .custom-section .section-title {
+            color: white;
+        }
+
+        .custom-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2em;
+            line-height: 1.8;
+        }
+
+        .custom-content h3 {
+            font-size: 1.8em;
+            margin: 30px 0 20px;
+            letter-spacing: 2px;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: #faf7f2;
+            text-align: center;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .contact-card h3 {
+            font-size: 1.8em;
+            color: #5a5a5a;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+
+        .contact-card p {
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: #8b7355;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        .contact-btn:hover {
+            background: #6b5a47;
+        }
+
+        /* Footer */
+        footer {
+            background: #6b5a47;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+                letter-spacing: 4px;
+            }
+
+            .hero .tagline {
+                font-size: 1.1em;
+            }
+
+            .section-title {
+                font-size: 2em;
+            }
+
+            .nav-buttons {
+                gap: 10px;
+            }
+
+            .nav-btn {
+                padding: 12px 25px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Made + Remade</h1>
+        <p class="subtitle">Furniture and Upcycled Vintage</p>
+        <p class="tagline">Responsible goods for your curated home</p>
+    </section>
+
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+        <button class="nav-btn" onclick="scrollToSection('refinished')">Refinished Vintage</button>
+        <button class="nav-btn" onclick="scrollToSection('custom')">Custom</button>
+    </div>
+
+    <!-- New Animals Section -->
+    <section class="section animals-section" id="animals">
+        <h2 class="section-title">New Animals</h2>
+        <div class="animals-grid">
+            <div class="animal-card">
+                <img src="images/bunny.jpg" alt="Decorative Bunny" onerror="this.src='https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?w=400&h=400&fit=crop'">
+                <h3>Bunnies</h3>
+            </div>
+            <div class="animal-card">
+                <img src="images/owl.jpg" alt="Decorative Owl" onerror="this.src='https://images.unsplash.com/photo-1606567595334-d39972c85dbe?w=400&h=400&fit=crop'">
+                <h3>Owls</h3>
+            </div>
+            <div class="animal-card">
+                <img src="images/swan.jpg" alt="Decorative Swan" onerror="this.src='https://images.unsplash.com/photo-1568454537842-d933259bb258?w=400&h=400&fit=crop'">
+                <h3>Swans</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Refinished Furniture Section -->
+    <section class="section furniture-section" id="refinished">
+        <h2 class="section-title">Refinished Furniture</h2>
+        <div class="furniture-grid">
+            <div class="furniture-card">
+                <h3>Mixed Finish</h3>
+            </div>
+            <div class="furniture-card">
+                <h3>Restored Grain</h3>
+            </div>
+            <div class="furniture-card">
+                <h3>Painted</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Furniture Section -->
+    <section class="section custom-section" id="custom">
+        <h2 class="section-title">Custom Furniture</h2>
+        <div class="custom-content">
+            <h3>by Isthmus Woodworks</h3>
+            <p>Create something uniquely yours with our custom furniture services. From concept to completion, we work with you to design and build pieces that perfectly fit your space and style.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact">
+        <h2 class="section-title">Get in Touch</h2>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h3>Contact Us</h3>
+                <p>Have questions about our furniture or want to discuss a custom project? We'd love to hear from you.</p>
+                <a href="/cdn-cgi/l/email-protection#8fe6e1e9e0cfe2eeebeaeee1ebfdeae2eeebeaa1ece0e2" class="contact-btn">Email Us</a>
+            </div>
+            <div class="contact-card">
+                <h3>Visit Us</h3>
+                <p>Come see our collection in person and discover the perfect piece for your home.</p>
+                <a href="#location" class="contact-btn">How to Find Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Made + Remade | Furniture and Upcycled Vintage</p>
+        <p>Responsible goods for your curated home</p>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+       
